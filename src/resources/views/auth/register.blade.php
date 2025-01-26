@@ -67,7 +67,6 @@
                 </div>
             </div>
 
-            <!-- 登録ボタン -->
             <button class="button" type="submit">登録</button>
 
         </form>
