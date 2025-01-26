@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TestController;
+use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [TestController::class, 'index']);
+Route::post('/confirm', [TestController::class, 'confirm']);
+Route::post('/contacts', [TestController::class, 'store']);
+
+Route::get('/thanks', function () {
+        return view('thanks');
+    })->name('thanks');
+
+Route::get('/confirm', function () {
+        return redirect('/');
+    });
+
+
+Route::get('/', [AuthController::class, 'index']);
+
